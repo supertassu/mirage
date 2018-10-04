@@ -6,10 +6,17 @@
 
     <groupId>org.ipvp</groupId>
     <artifactId>mirage</artifactId>
-    <version>3.0.0-SNAPSHOT</version>
+    <version>3.0.0</version>
 
     <name>Mirage</name>
     <description>An API used to send fake blocks to players</description>
+
+    <distributionManagement>
+        <repository>
+            <id>tassu-repo</id>
+            <url>file:///home/tassu/maven</url>
+        </repository>
+    </distributionManagement>
 
     <build>
         <resources>
@@ -45,6 +52,30 @@
                         <goals>
                             <goal>shade</goal>
                         </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                    <id>attach-sources</id>
+                    <goals>
+                        <goal>jar</goal>
+                    </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <executions>
+                    <execution>
+                    <id>attach-javadocs</id>
+                    <goals>
+                        <goal>jar</goal>
+                    </goals>
                     </execution>
                 </executions>
             </plugin>
